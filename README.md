@@ -57,6 +57,7 @@ We would convert a NodeList int an Array because NodeList is an _Array-like_ obj
 
 A component is a block of code that is made of several things(HTML, CSS and JavaScript) that can be reused in an application/webpage. For example, here's a dropdown component:
 ```javascript
+// code uses various ways of accessing the DOM to manipulate the HTML and CSS to create this Dropdown
 class Dropdown {
   constructor(element) {
     this.element = element;
