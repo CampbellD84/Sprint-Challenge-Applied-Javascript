@@ -32,13 +32,46 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The DOM is an object representation of HTML elements on a webpage. DOM stands for the Document Object Model. Each element in the DOM is a Node and can be manipulated by using various methods on any Node in the DOM, create  entirely new Nodes, change the content of any node(s) and style any nodes in the DOM. DOM is a tree data structure. The DOM is also a language-agnostic API between the content and the browser.  
+
 2. What is an event?
+
+An event is an interaction the user has with the webpage. Events are things like when a user clicks on a button, link, etc., uses the scroll wheel of a mouse or scroll through the webpage, presses a key on the keyboard. An event can be tracked by the browser.
 
 3. What is an event listener?
 
+An event listener is a method that will fire a callback function when the specified event occurs. For example:
+```javascript
+    //eventelem is an element with a class of tab
+    const eventelem = document.querySelector('.tab');
+    eventelem.addEventListener('click', () => doStuff());
+    // when someone clicks on eventelem, it will fire the doStuff() function
+
+```
+
 4. Why would we convert a NodeList into an Array?
 
+We would convert a NodeList int an Array because NodeList is an _Array-like_ object and not a **full-fledged Array**.  NodeList lacks a majority of the methods you usually have on the Array object.  By using Array.from() on the NodeList, the NodeList has access to all of the Array methods.
+
 5. What is a component?
+
+A component is a block of code that is made of several things(HTML, CSS and JavaScript) that can be reused in an application/webpage. For example, here's a dropdown component:
+```javascript
+class Dropdown {
+  constructor(element) {
+    this.element = element;
+    this.button = this.element.querySelector('.dropdown-button');
+    this.content = document.querySelector('.dropdown-content');
+    this.button.addEventListener('click', () => {
+      return this.toggleContent();
+    })
+  }
+
+  toggleContent() {
+    this.content.classList.toggle('dropdown-hidden');
+  }
+}
+```
 
 ### Git Set up
 
